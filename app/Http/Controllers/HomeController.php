@@ -26,4 +26,9 @@ class HomeController extends Controller
         $featured_products = ProductController::get_featured_products();
         return view('home.index')->with('featured_products', $featured_products);
     }
+
+    public function about()
+    {
+        return view('home.about');
+    }
 }
