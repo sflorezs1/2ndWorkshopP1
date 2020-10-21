@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/list', 'App\Http\Controllers\ProductController@catalog')->name('catalog.list');
 
-Route::post('/showitem{product_id}', 'App\Http\Controllers\ProductController@item')->name('catalog.showitem');
+Route::get('/showitem{product_id}', 'App\Http\Controllers\ProductController@item')->name('catalog.showitem');
 
 Auth::routes();
 
