@@ -12,7 +12,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div id="app">
+        <div id="appLayout">
             <!-- Set the navbar -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
                 <a class="navbar-brand" href="#"> <img src="/images/diamanthia_logo.png" width="auto" height="60px" alt="diamanthia_logo"></a>
@@ -20,7 +20,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav mr-auto">
                         <!-- Home -->
                         <li class="nav-item {{ Route::is('home.index') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('home.index') }}">Home </a>
@@ -30,6 +30,25 @@
                         </li>
                         <li class="nav-item {{ Route::is('info.us') ? 'active' : '' }}">
                             <a class="nav-link" href="{{ route('home.index') }}">About Us</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
                         </li>
                     </ul>
                 </div>

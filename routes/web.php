@@ -17,8 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/index', 'App\Http\Controllers\HomeController@index')->name('home.index');
-
 Route::get('/list', 'App\Http\Controllers\ProductController@catalog')->name('catalog.list');
 
 Route::post('/showitem{product_id}', 'App\Http\Controllers\ProductController@item')->name('catalog.showitem');
+
+Auth::routes();
+
+Route::get('/index', 'App\Http\Controllers\HomeController@index')->name('home.index');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
