@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Product;
 
 
-class CommentTableSeeder extends Seeder
+class CommentsTableSeeder extends Seeder
 {
     /**
      * Seed the application's database.
