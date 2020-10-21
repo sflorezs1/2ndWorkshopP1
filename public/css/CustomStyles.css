@@ -8,9 +8,15 @@ footer {
 .carousel-control-prev {
     filter: invert(100%);
 }
+
 body {
     background-image: url('/images/background.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+}
+
+.content {
+    padding-top: 4em;
+    padding-bottom: 4em;
 }

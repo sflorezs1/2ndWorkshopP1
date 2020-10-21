@@ -41,7 +41,7 @@ class Comment extends Model
         $this->attributes['content'] = $content;
     }
 
-    public function getStart()
+    public function getStars()
     {
         return $this->attributes['stars'];
     }

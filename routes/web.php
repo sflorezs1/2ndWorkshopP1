@@ -19,4 +19,6 @@ Route::get('/', function () {
 
 Route::get('/index', 'App\Http\Controllers\HomeController@index')->name('home.index');
 
-Route::get('/store', 'App\Http\Controllers\ProductController@store')->name('store');
+Route::get('/list', 'App\Http\Controllers\ProductController@catalog')->name('catalog.list');
+
+Route::post('/showitem{product_id}', 'App\Http\Controllers\ProductController@item')->name('catalog.showitem');
