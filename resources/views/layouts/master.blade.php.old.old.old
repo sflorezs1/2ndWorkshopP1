@@ -29,7 +29,7 @@
                             <a class="nav-link" href="{{ route('catalog.list') }}">Catalog </a>
                         </li>
                         <li class="nav-item {{ Route::is('home.about') ? 'active' : '' }}">
-                            <a class="nav-link" href="{{ route('home.index') }}">About Us</a>
+                            <a class="nav-link" href="{{ route('home.about') }}">About Us</a>
                         </li>
                     </ul>
                 </div>
